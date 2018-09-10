@@ -17,7 +17,7 @@
 2. 原则：快速迭代，devops。例如heroku的12 factor原则（Http://www.12-factor.com）。约束是不能变的，而原则是可变的。
 3. 实践：包括代码规范，日志处理方法，开发约定。这些实践的变化频率高于原则。实践是巩固原则的
 4. 原则是确定的，实践是多样化的。例如http rest是原则，.net和java是实践
-5. 
+5. ![](http://a2.qpic.cn/psb?/V120cGPg1BkF5W/zEjCcTLG71gt0Mxzxo7MgGm62cMGlF*RQmxPWrUfYnc!/c/dNEAAAAAAAAA&ek=1&kp=1&pt=0&bo=HQTSAh0E0gIBACc!&tl=1&tm=1536580800&sce=0-12-12&rf=0-18)
 
 ### 要求的标准（具体标准）
 1. 集中管理服务系统的健康和日志
