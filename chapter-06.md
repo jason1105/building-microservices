@@ -90,8 +90,24 @@ REA和Gilt
 可以看到传统虚拟化中hypervisor是集中管理层。它占用了一定的资源。
 ![](http://a4.qpic.cn/psb?/V120cGPg1BkF5W/pqxfV1wqBHNclkcwM1K5qazKHNaq2eSXAreqyNfYHSo!/c/dDcBAAAAAAAA&ek=1&kp=1&pt=0&bo=oAU4BAAAAAABAL4!&tl=3&vuin=13366824&tm=1536627600&sce=60-2-2&rf=0-0)
 2. Vagrant：使用文本文件定义虚拟机，通过该文本文件与团队其他成员分享虚拟机。常用语开发和测试环境。
-3. Linux容器：特点
+3. Linux容器：
+
+分类：
+- Solaris 的 Zones、OpenVZ
+- LXC
+
+特点：
 - 容器是系统进程树的子树
 - 不需要hypervisor
 - 共享内核
 - 启动速度快
+- 轻量，资源利用率更高
+- 容器可与虚拟机一同工作
+
+缺点：
+- 容器中的进程可能与其他容器中、或主机进程发生干扰
+- 需要配置IPTable进行端口映射
+
+### Docker
+
+### 
