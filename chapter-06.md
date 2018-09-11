@@ -87,4 +87,11 @@ REA和Gilt
 管理大量主机的关键：将物理机划分为小块。
 
 1. 传统虚拟化技术：下图的标准虚拟化（也叫类型2虚拟化）与基于容器的虚拟化的对比。
-![](https://user.qzone.qq.com/13366824/311/)
+可以看到传统虚拟化中hypervisor是集中管理层。它占用了一定的资源。
+![](http://a4.qpic.cn/psb?/V120cGPg1BkF5W/pqxfV1wqBHNclkcwM1K5qazKHNaq2eSXAreqyNfYHSo!/c/dDcBAAAAAAAA&ek=1&kp=1&pt=0&bo=oAU4BAAAAAABAL4!&tl=3&vuin=13366824&tm=1536627600&sce=60-2-2&rf=0-0)
+2. Vagrant：使用文本文件定义虚拟机，通过该文本文件与团队其他成员分享虚拟机。常用语开发和测试环境。
+3. Linux容器：特点
+- 容器是系统进程树的子树
+- 不需要hypervisor
+- 共享内核
+- 启动速度快
