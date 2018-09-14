@@ -92,22 +92,76 @@ REA和Gilt
 2. Vagrant：使用文本文件定义虚拟机，通过该文本文件与团队其他成员分享虚拟机。常用语开发和测试环境。
 3. Linux容器：
 
-分类：
-- Solaris 的 Zones、OpenVZ
-- LXC
+    分类：
+    - Solaris 的 Zones、OpenVZ
+    - LXC
+    
+    特点：
+    - 容器是系统进程树的子树
+    - 不需要hypervisor
+    - 共享内核
+    - 启动速度快
+    - 轻量，资源利用率更高
+    - 容器可与虚拟机一同工作
+    
+    缺点：
+    - 容器中的进程可能与其他容器中、或主机进程发生干扰
+    - 需要配置IPTable进行端口映射
 
-特点：
-- 容器是系统进程树的子树
-- 不需要hypervisor
-- 共享内核
-- 启动速度快
-- 轻量，资源利用率更高
-- 容器可与虚拟机一同工作
+4. Docker
 
-缺点：
-- 容器中的进程可能与其他容器中、或主机进程发生干扰
-- 需要配置IPTable进行端口映射
+- 构建在轻量级容器之上
+- 有Registry
+- 大量周边技术：CoreOS、Kubernetes、Deis
 
-### Docker
+### 部署一个接口
 
-### 
+使用下面参数进行参数化的命令行调用：
+- 实体（微服务的名字）
+- 版本
+- 环境
+
+部署的例子：
+  
+        // 开发人员本地部署
+        $deploy artifact=catalog environment=local version=local
+
+        // CI自动部署  
+        `$deploy artifact=catalog environment=ci version=b456`
+
+        // QA手动部署用于测试  
+        `$deploy artifact=catalog environment=integrated_qa version=b456`
+
+
+> 一些工具  
+Fabric  + Boto（AWS）  
+Capistrano + Boto（AWS）    
+PowerShell  + Boto（AWS）
+
+#### 环境定义
+在服务的yaml中定义环境，例如：
+* 实例大小
+* 凭证（Credential）
+* 服务节点数量
+
+#### 微服务自己的信息
+
+    catalog-service:    
+        puppet_manifest: catalog.pp
+        connectivity:
+            - protocol: tcp
+              ports: [8080, 8081]
+              allowed: [WORLD]
+
+puppet是一个系统配置工具。
+
+### 小结
+
+原则
+
+* 每个微服务能够独立于其他服务进行部署
+* 每个微服务使用独立的代码库，和独立的CI
+* 每个微服务使用单独的容器
+* 自动化一切
+
+推荐一本书：《持续交付》， Jez Humble, Devid Farley
