@@ -134,9 +134,10 @@ REA和Gilt
 
 
 > 一些工具  
-Fabric  + Boto（AWS）  
+Fabric：Python工具，将命令行映射到函数，结合 Boto（AWS）可以自动化大型AWS环境。  
 Capistrano + Boto（AWS）    
-PowerShell  + Boto（AWS）
+PowerShell  + Boto（AWS）  
+Hashicorp的Terraform
 
 #### 环境定义
 在服务的yaml中定义环境，例如：
